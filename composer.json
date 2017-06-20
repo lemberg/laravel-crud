@@ -14,7 +14,9 @@
             "email": "yuriy.myrosh@lemberg.co.uk"
         }
     ],
-    "psr-4": {
-        "Lemberg\\CRUD\\": "src/"
+    "autoload": {
+        "psr-4": {
+            "Lemberg\\CRUD\\": "src/"
+        }
     }
 }
