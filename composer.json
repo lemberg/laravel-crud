@@ -1,0 +1,20 @@
+{
+    "name": "lemberg/laravelcrud",
+    "description": "Lemberg CRUD package",
+    "type": "library",
+    "require": {
+        "laravel/laravel": "~5.4",
+        "davejamesmiller/laravel-breadcrumbs": "^3.0",
+        "laravelcollective/html": "5.4.*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yuriy Myrosh",
+            "email": "yuriy.myrosh@lemberg.co.uk"
+        }
+    ],
+    "psr-4": {
+        "Lemberg\\CRUD\\": "src"
+    }
+}
