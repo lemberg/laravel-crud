@@ -1,5 +1,4 @@
-
-@extends('layouts.app')
+@extends('crud::layouts.app')
 
 @section('content')
     <div class="row">
@@ -7,28 +6,20 @@
             <div class="pull-left">
 
             </div>
-            {!! Form::open([route('floors.destroy', ['id' => $data->id, 'conference_alias' => $conference->alias]), 'method' => 'POST', 'class' => 'pull-right']) !!}
+            {!! Form::open([route($route.'.destroy', ['id' => $entity->id]), 'method' => 'POST', 'class' => 'pull-right']) !!}
             {{ method_field('DELETE') }}
             {{ Form::button("<i class='fa fa-trash-o'></i> Delete", ['onclick' => 'deleteItem(this)', 'class' => 'btn btn-danger']) }}
             {!! Form::close() !!}
-            <a href="{{ route('floors.edit', ['id' => $data->id, 'conference_alias' => $conference->alias]) }}" class="btn btn-info pull-right"><i class="fa fa-pencil"></i> {{ trans('Edit') }}</a>
             <div class="x_panel">
                 <div class="x_title">
-                    <h2>{{ trans('Floor plans') }}</h2>
+                    <h2>{{ trans($entity->pageTitle ? $entity->pageTitle : '') }} / {{$entity->id}}</h2>
                     <div class="clearfix"></div>
                 </div>
                 <div class="x_content">
                     <p>
-                        <strong>{{ trans('Name') }}:</strong> {{ $data->name }}<br>
-                    </p>
-                    <p>
-                        <strong>{{ trans('Order') }}:</strong> {{ $data->order }}<br>
-                    </p>
-                    <p>
-                        <strong>{{ trans('Image') }}:</strong><br>
-                        @if(!empty($data->image))
-                            {{ Html::image($data->image, $data->name, array('class' => 'img-thumbnail img-responsive')) }}
-                        @endif
+                        @foreach($entity->getVisible() as $visible)
+                            <strong>{{ trans(ucfirst($visible)) }}:</strong> {{ $entity->getAttributeValue($visible)}}<br>
+                        @endforeach
                     </p>
                 </div>
             </div>

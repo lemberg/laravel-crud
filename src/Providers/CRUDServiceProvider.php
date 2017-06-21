@@ -14,7 +14,6 @@ class CRUDServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'crud');
-        //
     }
 
     /**
@@ -24,6 +23,6 @@ class CRUDServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+//
     }
 }
