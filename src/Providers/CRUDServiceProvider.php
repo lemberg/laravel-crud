@@ -2,6 +2,7 @@
 
 namespace Lemberg\CRUD\Providers;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class CRUDServiceProvider extends ServiceProvider

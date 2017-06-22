@@ -21,7 +21,16 @@
                         @foreach($entity->formFields as $key => $options)
                             @if(array_get($options, 'exclude_in_view') != 'create')
                             <div class="form-group{{ $errors->has($key) ? ' has-error' : '' }}">
-                                {{ Form::label('type', trans(ucfirst($key))." *", ['class' => "control-label col-md-3 col-sm-3 col-xs-12"]) }}
+                                <?php
+                                    if (!$label = array_get($options, 'label')) {
+                                        $label = trans(ucfirst($key));
+                                    }
+
+                                    if (array_get($options, 'required') == 'create') {
+                                        $label .= ' *';
+                                    }
+                                ?>
+                                {{ Form::label('type', $label, ['class' => "control-label col-md-3 col-sm-3 col-xs-12"]) }}
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <?php
                                         $value = '';
