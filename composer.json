@@ -3,7 +3,7 @@
     "description": "Lemberg CRUD package",
     "type": "library",
     "require": {
-        "laravel/framework": ">=5.4",
+        "laravel/framework": "5.5.*",
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
         "laravelcollective/html": "^5.3.0"
     },
