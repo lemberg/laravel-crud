@@ -3,8 +3,8 @@
     "description": "Lemberg CRUD package",
     "type": "library",
     "require": {
-        "laravel/framework": ">=5.5",
-        "davejamesmiller/laravel-breadcrumbs": "^4.*",
+        "laravel/framework": ">=5.4",
+        "davejamesmiller/laravel-breadcrumbs": "^3.*",
         "laravelcollective/html": "^5.4.0"
     },
     "license": "MIT",
